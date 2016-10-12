@@ -1,0 +1,25 @@
+ru:
+  investments:
+    index:
+      title: Калькулятор доходности
+    login_as_investor:
+      title: Для продолжения необходимо %{login_link}
+      login_link: войти как инвестор
+    calculator_form:
+      calculate_amount: Размер инвестиций
+      expected_title: Оптимистично
+      expected_rate: Доходность <span id="expected_rate"></span>% годовых
+      expected_profit: Прибыль <span id="expected_profit"></span> руб. за <span class="investment_term"></span> мес.
+      actual_title: Реалистично
+      actual_rate: Доходность <span id="actual_rate"></span>% годовых
+      actual_profit: Прибыль <span id="actual_profit"></span> руб. за <span class="investment_term"></span> мес.
+  layouts:
+    nav_links_for_auth:
+      edit_account: Профиль
+      sign_in: Войти
+      sign_out: Выйти
+      sign_up: Регистрация
+      admin: Админпанель
+      users: Пользователи
+    navigation:
+      home: Главная

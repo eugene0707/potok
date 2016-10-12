@@ -15,8 +15,8 @@ module AdminOnly
   def admin_only
     redirect_to :back, alert: 'Access denied.' unless current_user.admin?
 
-    rescue_from ActionController::RedirectBackError do
-      redirect_to '/', alert: 'Access denied.'
+    rescue_handlers do |exception|
+      redirect_to '/', alert: 'Access denied.' if exception.class == ActionController::RedirectBackError
     end
   end
 

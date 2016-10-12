@@ -23,6 +23,9 @@ gem 'simple_form'
 gem 'slim-rails'
 gem 'thin'
 gem 'upmin-admin'
+gem 'migration_comments'
+gem 'schema_plus'
+gem 'gon'
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'
@@ -33,6 +36,7 @@ group :development do
   gem 'rb-fsevent', require: false
   gem 'rb-inotify', require: false
   gem 'spring-commands-rspec'
+  gem 'annotate'
 end
 group :development, :test do
   gem 'factory_girl_rails'
@@ -47,4 +51,5 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers'
 end

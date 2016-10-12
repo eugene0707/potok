@@ -1,0 +1,8 @@
+.container
+  .row
+    .col-lg-12.text-center
+      h1 = t '.title'
+      - unless current_user.try(:investor?)
+        == render 'login_as_investor'
+      - else
+        == render 'calculator_form'
