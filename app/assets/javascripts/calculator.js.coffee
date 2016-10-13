@@ -1,6 +1,11 @@
 ready = ->
   return if ($('#calculate_amount').length == 0)
 
+  $('#calculator_form').on 'submit', (e)->
+    e.preventDefault()
+    e.stopPropagation()
+    $('#calculate_amount').blur()
+
   $('#calculate_amount').on 'input', ->
     v = $(this).val()
     vc = v.replace(/[^0-9]/, '')
