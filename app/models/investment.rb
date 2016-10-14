@@ -22,7 +22,7 @@ class Investment < ActiveRecord::Base
   validates_numericality_of :interest_rate, greater_than_or_equal_to: 0, less_than_or_equal_to: 1
 
   def self.stats(instance = nil)
-    investment_stats = []
+    investment_stats = {}
     investment_stats[:total_amount] = instance.try(:total_amount) || 0
     investment_stats[:term] = instance.try(:term) || 0
     investment_stats[:interest_rate] = instance.try(:interest_rate).to_f || 0

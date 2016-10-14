@@ -31,7 +31,7 @@ investment = Investment.find_or_create_by!(user_id: User.where(role: 0).first.id
 end
 puts "CREATED INVESTMENT: #{investment.name}"
 
-3.times do |i|
+4.times do |i|
   loan = Loan.find_or_create_by!(user_id: User.find_by_email("borrower#{i + 1}@example.com").id, investment_id: Investment.first.id) do |loan|
     loan.amount = 1000000
     loan.term = 6
@@ -59,6 +59,15 @@ current_loan.loan_payments.find_or_create_by!(period: 1) {|payment| payment.amou
 current_loan.loan_payments.find_or_create_by!(period: 2) {|payment| payment.amount = 191666.67 }
 current_loan.loan_payments.find_or_create_by!(period: 3) {|payment| payment.amount = 208333.33 and payment.is_overdue = true }
 current_loan.loan_payments.find_or_create_by!(period: 4) {|payment| payment.amount = 208333.33 and payment.is_overdue = true }
+current_loan.loan_payments.find_or_create_by!(period: 5) {|payment| payment.amount = 208333.33 and payment.is_overdue = true }
+current_loan.loan_payments.find_or_create_by!(period: 6) {|payment| payment.amount = 208333.33 and payment.is_overdue = true }
+puts "CREATED PAYMENTS FOR LOAN: #{current_loan.user.name}"
+
+current_loan = Loan.find_by(user_id: User.find_by_email('borrower4@example.com').id, investment_id: Investment.first.id)
+current_loan.loan_payments.find_or_create_by!(period: 1) {|payment| payment.amount = 191666.67 }
+current_loan.loan_payments.find_or_create_by!(period: 2) {|payment| payment.amount = 191666.67 }
+current_loan.loan_payments.find_or_create_by!(period: 3) {|payment| payment.amount = 191666.67 }
+current_loan.loan_payments.find_or_create_by!(period: 4) {|payment| payment.amount = 191666.67 }
 current_loan.loan_payments.find_or_create_by!(period: 5) {|payment| payment.amount = 208333.33 and payment.is_overdue = true }
 current_loan.loan_payments.find_or_create_by!(period: 6) {|payment| payment.amount = 208333.33 and payment.is_overdue = true }
 puts "CREATED PAYMENTS FOR LOAN: #{current_loan.user.name}"

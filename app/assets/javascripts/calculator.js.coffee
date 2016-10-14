@@ -18,7 +18,7 @@ ready = ->
     $('#expected_rate').text(parseInt(window.gon.investment_stats.interest_rate * 100))
     $('#expected_profit').text(parseInt(amount * window.gon.investment_stats.interest_rate * (window.gon.investment_stats.term / 12)))
     $('.investment_term').text(window.gon.investment_stats.term)
-    $('#actual_rate').text(parseInt(window.gon.investment_stats.actual_rate * 100))
+    $('#actual_rate').text(window.gon.investment_stats.actual_rate * 100)
     $('#actual_profit').text(parseInt(amount * window.gon.investment_stats.actual_rate * (window.gon.investment_stats.term / 12)))
 
   $('#calculate_amount').val(window.gon.investment_stats.total_amount)
