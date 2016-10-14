@@ -26,7 +26,13 @@ FactoryGirl.define do
     password 'please123'
 
     trait :admin do
+      email 'admin@example.com'
       role 'admin'
+    end
+
+    trait :borrower do
+      email 'borrower@example.com'
+      role 'borrower'
     end
   end
 end

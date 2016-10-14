@@ -13,5 +13,9 @@
 
 FactoryGirl.define do
   factory :loan_payment do
+    loan { create :loan }
+    amount 370
+    period 1
+    is_overdue false
   end
 end

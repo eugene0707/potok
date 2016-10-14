@@ -13,5 +13,9 @@
 
 FactoryGirl.define do
   factory :investment do
+    user { create :user }
+    name 'test investment'
+    term 3
+    interest_rate 0.12
   end
 end

@@ -14,5 +14,11 @@
 
 FactoryGirl.define do
   factory :loan do
+    user { create :user, :borrower }
+    investment { create :investment }
+    amount 1000
+    term 3
+    interest_rate 0.12
+    penalty_rate 0.24
   end
 end

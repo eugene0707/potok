@@ -21,10 +21,18 @@
 
 require 'rails_helper'
 
-RSpec.describe User, type: :model do
+RSpec.describe User do
   context 'instance' do
     it { is_expected.to respond_to(:name) }
     it { is_expected.to respond_to(:email) }
     it { is_expected.to respond_to(:role) }
+    it { is_expected.to have_many(:investments) }
+    it { is_expected.to have_many(:loans) }
+    it { is_expected.to define_enum_for(:role).with([:investor, :borrower, :admin]) }
+  end
+
+  context 'defaults' do
+    subject { create :user }
+    its(:role) { is_expected.to eq('investor') }
   end
 end
